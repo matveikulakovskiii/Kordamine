@@ -53,6 +53,8 @@ namespace ConsoleApp
                 }
                 return count;
             }
+            //Ül. 3
+            
             Citizen[] M = new Citizen[]
         {
             new Citizen("Kulakovski", "Matvei", "Alekseivitš", "Pärnu mnt 16", new DateTime(2006, 9, 4)),
