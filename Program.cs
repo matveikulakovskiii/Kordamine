@@ -22,22 +22,21 @@ namespace ConsoleApp
             }
             Console.ReadLine();
 
-
-
-
             //Ül. 2
-            int N = 100;
+            int N = 10;
             double[] nums = GenerateRandomNumbers(N);
             int count = CountOutOfRange(nums);
             Console.WriteLine($"Üksuste arv, mis jäävad vahemikku -10 kuni +10 välja: {count}");
             Console.ReadLine();
+
+
             static double[] GenerateRandomNumbers(int N)
             {
                 Random random = new Random();
                 double[] numbers = new double[N];
                 for (int i = 0; i < N; i++)
                 {
-                    numbers[i] = random.NextDouble() * 200 - 100;
+                    numbers[i] = random.Next(-30, 30);
                 }
                 return numbers;
             }
@@ -53,17 +52,17 @@ namespace ConsoleApp
                 }
                 return count;
             }
+
             //Ül. 3
-            
             Citizen[] M = new Citizen[]
-        {
-            new Citizen("Kulakovski", "Matvei", "Alekseivitš", "Pärnu mnt 16", new DateTime(2006, 9, 4)),
-            new Citizen("Petrov", "Peeter", "Petrovitš", "Lageda tee 1", new DateTime(1998, 9, 30)),
-            new Citizen("Sidorov", "Sergei", "Aleksandrovitš", "Narva mnt 34", new DateTime(1972, 3, 10)),
-            new Citizen("Andrejev", "Andrei", "Andrejevitš", "Pärnu mnt 16", new DateTime(2001, 11, 20)),
-            new Citizen("Kozlov", "Dmitri", "Igorevitš", "Lageda tee 1", new DateTime(1990, 7, 5)),
-            new Citizen("Petrov", "Ivan", "Ivanovitš", "Narva mnt 34", new DateTime(1980, 12, 25)),
-        };
+            {
+                new Citizen("Kulakovski", "Matvei", "Alekseivitš", "Pärnu mnt 16", new DateTime(2006, 9, 4)),
+                new Citizen("Eesalu", "Daniel", "Petrovitš", "Lageda tee 1", new DateTime(1998, 9, 30)),
+                new Citizen("Sidorov", "Sergei", "Aleksandrovitš", "Narva mnt 34", new DateTime(1972, 3, 10)),
+                new Citizen("Dmitriev", "Andrei", "Andrejevitš", "Pärnu mnt 16", new DateTime(2001, 11, 20)),
+                new Citizen("Orlov", "Dmitri", "Igorevitš", "Lageda tee 1", new DateTime(1990, 7, 5)),
+                new Citizen("Petrov", "Ivan", "Ivanovitš", "Narva mnt 34", new DateTime(1980, 12, 25)),
+            };
             string searchAddress = "Pärnu mnt 16";
             List<Citizen> voters = new List<Citizen>();
             foreach (Citizen citizen in M)
